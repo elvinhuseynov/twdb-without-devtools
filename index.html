@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Xarakter kodlaması UTF-8 olaraq təyin edilib -->
+  <meta charset="UTF-8">
+  <!-- Səhifənin başlığı -->
+  <title>Responsive Dashboard Boilerplate</title>
+  <!-- Responsiv dizayn üçün viewport tənzimləməsi -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Tailwind CSS CDN vasitəsilə əlavə olunur -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+  <!-- Səhifənin tam hündürlüyü boyunca mərkəzləşdirilmiş flex konteyneri -->
+  <div class="min-h-screen flex flex-col">
+    
+    <!-- Header Bölməsi: Səhifənin yuxarı hissəsində sabit qalacaq -->
+    <header class="bg-white shadow">
+      <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <!-- Dashboard başlığı -->
+        <h1 class="text-xl font-bold">Dashboard</h1>
+        <!-- Orta və böyük ekranlarda göstərilən əlavə naviqasiya linkləri -->
+        <div class="hidden md:flex space-x-4">
+          <a href="#" class="text-gray-600 hover:text-gray-900">Profile</a>
+          <a href="#" class="text-gray-600 hover:text-gray-900">Settings</a>
+          <a href="#" class="text-gray-600 hover:text-gray-900">Logout</a>
+        </div>
+      </div>
+    </header>
+    
+    <!-- Əsas Məzmun Bölməsi: Sidebar və Main Panel -->
+    <!-- Mobil cihazlarda (sm) vertical (sütun) düzülüş; orta və böyük ekranlarda (md+) horizontal (sətir) düzülüş -->
+    <div class="flex flex-1 flex-col md:flex-row">
+      
+      <!-- Sidebar: Mobil cihazlarda yuxarıda, orta və böyük ekranlarda isə solda yerləşir -->
+      <aside class="bg-gray-800 text-white p-4 md:w-64">
+        <!-- Naviqasiya menyusu -->
+        <nav>
+          <ul>
+            <li class="mb-2">
+              <a href="#" class="block p-2 rounded hover:bg-gray-700">Dashboard</a>
+            </li>
+            <li class="mb-2">
+              <a href="#" class="block p-2 rounded hover:bg-gray-700">Users</a>
+            </li>
+            <li class="mb-2">
+              <a href="#" class="block p-2 rounded hover:bg-gray-700">Reports</a>
+            </li>
+            <li class="mb-2">
+              <a href="#" class="block p-2 rounded hover:bg-gray-700">Settings</a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      
+      <!-- Main Panel: Əsas məzmunun yerləşdiyi hissə -->
+      <main class="flex-1 p-4">
+        <!-- Grid layout: Ekran ölçüsünə görə 1, 2 və ya 3 sütunlu düzülüş -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <!-- Nümunə Kart 1 -->
+          <div class="bg-white p-4 rounded shadow">
+            <h2 class="text-lg font-bold mb-2">Card Title 1</h2>
+            <p class="text-gray-700">Content for card 1.</p>
+          </div>
+          <!-- Nümunə Kart 2 -->
+          <div class="bg-white p-4 rounded shadow">
+            <h2 class="text-lg font-bold mb-2">Card Title 2</h2>
+            <p class="text-gray-700">Content for card 2.</p>
+          </div>
+          <!-- Nümunə Kart 3 -->
+          <div class="bg-white p-4 rounded shadow">
+            <h2 class="text-lg font-bold mb-2">Card Title 3</h2>
+            <p class="text-gray-700">Content for card 3.</p>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Footer Bölməsi: Səhifənin alt hissəsində yerləşir -->
+    <footer class="bg-white shadow p-4 text-center">
+      <p class="text-sm text-gray-600">&copy; 2025 Your Company. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.keyCode === 123 || 
+         (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74)) ||
+         (e.ctrlKey && e.keyCode === 85)) {
+        e.preventDefault();
+      }
+    });
+
+
+    setInterval(function() {
+      var threshold = 160;
+      if ((window.outerWidth - window.innerWidth > threshold) || 
+          (window.outerHeight - window.innerHeight > threshold)) {
+        document.body.innerHTML = "";
+        alert("Developer tools are disabled on this site.");
+        window.location.reload();
+      }
+    }, 1000);
+  </script>
+</body>
+</html>

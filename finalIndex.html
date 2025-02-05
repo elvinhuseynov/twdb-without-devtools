@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Xarakter kodlaması UTF-8 olaraq təyin edilib -->
+  <meta charset="UTF-8">
+  <!-- Səhifənin başlığı -->
+  <title>Responsive Dashboard</title>
+  <!-- Tailwind CSS CDN vasitəsilə əlavə olunur -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Responsiv dizayn üçün viewport tənzimləməsi -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="bg-gray-100">
+  <!-- Səhifənin tam hündürlüyü boyunca mərkəzləşdirilmiş flex konteyneri -->
+  <div class="min-h-screen flex flex-col">
+    
+    <!-- Header: Səhifənin yuxarı hissəsində sabit qalan bölmə -->
+    <header class="bg-white shadow">
+      <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <!-- Dashboard başlığı -->
+        <h1 class="text-xl font-bold">Dashboard</h1>
+        <!-- Yalnız orta və böyük ekranlarda göstərilən yuxarı naviqasiya -->
+        <div class="hidden md:flex space-x-4">
+          <a href="#" class="text-gray-600 hover:text-gray-900">Profile</a>
+          <a href="#" class="text-gray-600 hover:text-gray-900">Settings</a>
+          <a href="#" class="text-gray-600 hover:text-gray-900">Logout</a>
+        </div>
+      </div>
+    </header>
+    
+    <!-- Əsas məzmun: Sidebar və Main Panel -->
+    <!-- Mobil cihazlarda (sm) layout vertical (sütun) şəklində, orta və böyük ekranlarda (md+) horizontal (sətir) düzülür -->
+    <div class="flex flex-1 flex-col md:flex-row">
+      
+      <!-- Sidebar: Mobil cihazlarda yuxarıda, orta və böyük ekranlarda isə solda yerləşir -->
+      <aside class="bg-gray-800 text-white p-4 md:w-64">
+        <nav>
+          <ul>
+            <li class="mb-2">
+              <a href="#" class="block p-2 rounded hover:bg-gray-700">Dashboard</a>
+            </li>
+            <li class="mb-2">
+              <a href="#" class="block p-2 rounded hover:bg-gray-700">Users</a>
+            </li>
+            <li class="mb-2">
+              <a href="#" class="block p-2 rounded hover:bg-gray-700">Reports</a>
+            </li>
+            <li class="mb-2">
+              <a href="#" class="block p-2 rounded hover:bg-gray-700">Settings</a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      
+      <!-- Main Panel: Əsas məzmunun yerləşdiyi hissə -->
+      <main class="flex-1 p-4">
+        <!-- Grid layout: Ekran ölçüsünə görə 1, 2 və ya 3 sütunlu düzülüş -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <!-- Nümunə kart 1 -->
+          <div class="bg-white p-4 rounded shadow">
+            <h2 class="text-lg font-bold mb-2">Card Title 1</h2>
+            <p class="text-gray-700">Content for card 1.</p>
+          </div>
+          <!-- Nümunə kart 2 -->
+          <div class="bg-white p-4 rounded shadow">
+            <h2 class="text-lg font-bold mb-2">Card Title 2</h2>
+            <p class="text-gray-700">Content for card 2.</p>
+          </div>
+          <!-- Nümunə kart 3 -->
+          <div class="bg-white p-4 rounded shadow">
+            <h2 class="text-lg font-bold mb-2">Card Title 3</h2>
+            <p class="text-gray-700">Content for card 3.</p>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
